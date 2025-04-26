@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/* Réinitialisation des styles de tous les éléments */
+
+
+.shop-container {
+    max-width: 1400px; /* Définit une largeur maximale de 1400 pixels pour le conteneur de la boutique */
+    margin: 40px auto; /* Centre le conteneur avec une marge de 40 pixels en haut et en bas */
+    padding: 0 20px; /* Ajoute un rembourrage de 20 pixels à gauche et à droite */
+}
+
+.shop-header {
+    color: #fff; /* Définit la couleur du texte en blanc pour l'en-tête de la boutique */
+    margin-bottom: 40px; /* Ajoute une marge en bas de 40 pixels */
+}
+
+.shop-header h1 {
+    font-size: calc(3rem + 0.5vw); /* Définit une taille de police dynamique pour le titre */
+    margin-bottom: 20px; /* Ajoute une marge en bas de 20 pixels */
+}
+
+.shop-header p {
+    font-size: 1.2rem; /* Définit la taille de la police pour le paragraphe */
+    opacity: 0.9; /* Définit la transparence à 90% */
+    max-width: 600px; /* Définit une largeur maximum pour le paragraphe de description */
+}
+
+.categories {
+    display: flex; /* Utilise Flexbox pour disposer les catégories en ligne */
+    gap: 15px; /* Définit un espace de 15 pixels entre les boutons de catégorie */
+    margin-bottom: 40px; /* Ajoute une marge en bas de 40 pixels */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si l'espace est insuffisant */
+}
+
+.category-button {
+    background: rgba(255, 255, 255, 0.1); /* Définit un fond blanc semi-transparent */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Définit une bordure solide blanche semi-transparente */
+    color: #fff; /* Définit la couleur du texte en blanc */
+    padding: 10px 20px; /* Ajoute un rembourrage de 10 pixels en haut et en bas, 20 pixels à gauche et à droite */
+    border-radius: 25px; /* Arrondit les coins du bouton */
+    cursor: pointer; /* Change le curseur en pointeur au survol */
+    transition: all 0.3s ease; /* Ajoute une transition fluide pour tous les changements */
+}
+
+.category-button:hover,
+.category-button.active {
+    background: #8dc26f; /* Change le fond au survol ou si actif */
+    border-color: #8dc26f; /* Change la couleur de la bordure au survol ou si actif */
+}
+
+.products-grid {
+    display: grid; /* Utilise CSS Grid pour la mise en page des produits */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Définit des colonnes flexibles avec un minimum de 300 pixels */
+    gap: 30px; /* Définit un écart de 30 pixels entre les cartes de produit */
+    margin-bottom: 50px; /* Ajoute une marge en bas de 50 pixels */
+}
+
+.product-card {
+    background: #fff; /* Définit un fond blanc pour la carte de produit */
+    border-radius: 15px; /* Arrondit les coins de la carte */
+    overflow: hidden; /* Cache les débordements */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère autour de la carte */
+}
+
+.product-card[data-hidden="true"] {
+    display: none; /* Cache les cartes de produit qui ont l'attribut data-hidden mis à vrai */
+}
+
+.product-image {
+    height: 300px; /* Définit une hauteur fixe pour l'image du produit */
+    position: relative; /* Nécessaire pour le positionnement de l'image à l'intérieur */
+    display: flex; /* Utilise Flexbox pour centrer l'image */
+    align-items: center; /* Centre l'image verticalement */
+    justify-content: center; /* Centre l'image horizontalement */
+}
+
+.product-image img {
+    width: 100%; /* Définit une largeur de 100% pour l'image */
+    height: 100%; /* Définit une hauteur de 100% pour l'image */
+    object-fit: cover; /* Ajuste l'image pour couvrir entièrement son conteneur */
+    position: absolute; /* Positionne l'image en position absolue pour la centrer */
+    left: 50%; /* Centre l'image horizontalement */
+    top: 50%; /* Centre l'image verticalement */
+    transform: translate(-50%, -50%); /* Translate l'image pour compenser son propre centrage */
+}
+
+.product-details {
+    padding: 25px; /* Ajoute un rembourrage de 25 pixels autour des détails du produit */
+    display: flex; /* Utilise Flexbox pour disposer les éléments verticalement */
+    flex-direction: column; /* Organise les éléments en colonne */
+}
+
+.product-name {
+    font-family: 'PT Serif', serif; /* Définit une police pour le nom du produit */
+    font-size: 1.5rem; /* Définit la taille de la police pour le nom */
+    margin-bottom: 10px; /* Ajoute une marge en bas de 10 pixels */
+    color: black; /* Définit la couleur du texte en noir */
+}
+
+.product-description {
+    color: #666; /* Définit la couleur tactile pour la description */
+    line-height: 1.4; /* Définit un espacement entre les lignes pour une meilleure lisibilité */
+    margin-bottom: 20px; /* Ajoute une marge en bas de 20 pixels */
+    flex-grow: 1; /* Permet à la description de prendre tout l'espace disponible */
+}
+
+.product-footer {
+    display: flex; /* Utilise Flexbox pour aligner le contenu du pied de page */
+    justify-content: space-between; /* Disperse les éléments aux extrémités opposées */
+    align-items: center; /* Centre verticalement les éléments */
+    margin-top: auto; /* Permet d'ajouter une marge en haut en bas du conteneur */
+}
+
+.product-price {
+    font-size: 1.5rem; /* Définit la taille de la police pour le prix */
+    font-weight: bold; /* Met le prix en gras */
+    color: #58873d; /* Définit la couleur du prix en vert */
+}
+
+.open-btn {
+    background: #58873d; /* Définit un fond vert pour le bouton */
+    color: #fff; /* Définit la couleur du texte du bouton en blanc */
+    border: none; /* Supprime par défaut la bordure du bouton */
+    padding: 12px 25px; /* Ajoute un rembourrage de 12 pixels en haut et en bas, 25 pixels à gauche et à droite */
+    border-radius: 25px; /* Arrondit les coins du bouton */
+    cursor: pointer; /* Change le curseur en pointeur */
+    transition: background 0.3s ease; /* Transition fluide pour le changement de couleur de fond */
+}
+
+.open-btn:hover {
+    background: #70a751; /* Change la couleur de fond au survol */
+}
+
+/* Partie Modal */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Positionnement fixe pour qu'il reste à l'écran */
+    z-index: 999; /* Assure que la modale est au-dessus des autres éléments */
+    left: 0; /* Aligne la modale à gauche */
+    top: 0; /* Aligne la modale en haut */
+    width: 100%; /* Prend toute la largeur de la fenêtre */
+    height: 100%; /* Prend toute la hauteur de la fenêtre */
+    overflow: auto; /* Permet le défilement si le contenu dépasse */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+}
+
+.modal-content {
+    background-color: #fff; /* Fond blanc pour le contenu de la modale */
+    margin: 15% auto; /* Centre la modale, avec un espacement en haut de 15% */
+    padding: 20px; /* Ajoute du rembourrage à l'intérieur de la modale */
+    border: 1px solid #888; /* Bordure grise pour délimiter la modale */
+    width: 80%; /* Largeur de la modale */
+    max-height: 80%; /* Hauteur maximale de la modale */
+    overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
+    border-radius: 10px; /* Arrondit les coins de la modale */
+    color: black; /* Définit la couleur du texte en noir */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce autour de la modale */
+}
+
+.close-btn {
+    color: #aaa; /* Définit une couleur grise pour le bouton de fermeture */
+    float: right; /* Aligne le bouton de fermeture à droite */
+    font-size: 28px; /* Définit la taille de la police pour le bouton de fermeture */
+    font-weight: bold; /* Met le texte en gras */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black; /* Change la couleur au survol ou en focus */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+    cursor: pointer; /* Change le curseur en pointeur */
+}
+
+
+code {
+  background-color: #f4f4f4; /* Définit un fond gris clair pour le bloc de code */
+  padding: 2px 4px; /* Ajoute du rembourrage autour du texte de code */
+  border-radius: 4px; /* Arrondit les coins du bloc de code */
+}
+
+.nav__list-item a {
+  font-weight: bold;
+}
+
+.info-content .name {
+  font-weight: 600;
+}
+
+
+/* Partie Modal */
+
+@media (max-width: 768px) { /* Styles réactifs pour les écrans plus petits */
+    .shop-header h1 {
+        font-size: 2.5rem; /* Réduit la taille de la police du titre pour les petits écrans */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste les colonnes pour les petits écrans */
+        gap: 20px; /* Réduit l'écart entre les produits */
+    }
+
+    .product-image {
+        height: 250px; /* Réduit la hauteur de l'image du produit pour les petits écrans */
+    }
+}

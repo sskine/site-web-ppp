@@ -1,0 +1,33 @@
+/* RESET & BASE */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .contact-info p,
+  .social-links a,
+  .navigation-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navigation-links a i {
+    margin-right: 8px;
+  }
+  
+  /* MAIN CONTENT */
+  main {
+    margin-left: 270px;
+    padding: 30px;
+  }

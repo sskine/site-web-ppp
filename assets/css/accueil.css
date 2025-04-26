@@ -1,0 +1,170 @@
+/* Style principal */
+main {
+  max-width: 1100px; /* Définit la largeur maximale du contenu principal à 1100 pixels */
+  margin: 0 auto; /* Centre le contenu horizontalement */
+  padding: 40px 20px; /* Ajoute un espacement intérieur de 40 pixels en haut et en bas, 20 pixels sur les côtés */
+  color: #f4f4f4; /* Définit une couleur de texte plus douce */
+  margin-left: 20%; /* Ajoute une marge à gauche de 20% de la largeur de l'écran */
+}
+
+h2 {
+  padding-top: 1rem; /* Ajoute un espacement en haut de 1 rem */
+  padding-bottom: 1rem; /* Ajoute un espacement en bas de 1 rem */
+}
+
+/* Bienvenue */
+.welcome {
+  text-align: center; /* Centre le texte dans la section de bienvenue */
+  margin: 10rem; /* Ajoute une grande marge de 10 rem autour de la section */
+  color: #ffffff; /* Définit la couleur d'accent pour le texte de la section d'accueil en blanc */
+}
+
+/* Mise en page Bento */
+.bento-grid {
+  display: grid; /* Utilise CSS Grid pour la mise en page */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Définit des colonnes flexibles, avec un minimum de 280px */
+  gap: 1.5rem; /* Définit un écart de 1,5 rem entre les éléments de la grille */
+  padding-top: 2rem; /* Ajoute un espacement intérieur en haut de 2 rem */
+  padding-bottom: 2.5rem; /* Ajoute un espacement intérieur en bas de 2,5 rem */
+}
+
+/* Carte Bento */
+.bento-card {
+  background: #1f2029; /* Définit une couleur de fond accueillante */
+  color: #ecf0f1; /* Définit une couleur de texte claire pour un meilleur contraste */
+  padding: 1.5rem; /* Ajoute un espacement intérieur de 1,5 rem */
+  border-radius: 0.75rem; /* Arrondit les bords de la carte */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce autour de la carte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide pour les effets de survol */
+  border-style: solid; /* Définit le style de la bordure à "solide" */
+  border-width: 1px; /* Définit la largeur de la bordure à 1 pixel */
+  border-color: #444; /* Définit la couleur de la bordure */
+}
+
+.bento-card:hover {
+  transform: translateY(-6px); /* Déplace la carte légèrement vers le haut au survol */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Augmente l'ombre pour un effet visuel au survol */
+}
+
+.bento-card h2 {
+  font-size: 1.5rem; /* Définit la taille de la police pour les titres à 1,5 rem */
+  margin-bottom: 1rem; /* Ajoute une marge en bas de 1 rem */
+  padding-top: 0; /* Supprime l'espacement en haut */
+  padding-bottom: 0; /* Supprime l'espacement en bas */
+  color: #c7c7c7; /* Définit une couleur dorée pour les titres */
+}
+
+.bento-card ul {
+  padding-left: 1.2rem; /* Ajoute un espacement intérieur à gauche de 1,2 rem pour les listes */
+}
+
+.bento-card p,
+.bento-card li {
+  font-size: 1rem; /* Définit la taille de la police pour les paragraphes et les éléments de liste à 1 rem */
+  line-height: 1.6; /* Définit l'espacement entre les lignes à 1,6 pour une meilleure lisibilité */
+}
+
+/* Boutons */
+.toggle-btn {
+  margin-top: 1rem; /* Ajoute une marge en haut de 1 rem */
+  background-color: #00bcd4; /* Définit une couleur de fond cyan */
+  color: white; /* Définit la couleur du texte en blanc */
+  padding: 10px 16px; /* Ajoute un espacement intérieur de 10 pixels en haut et en bas, 16 pixels sur les côtés */
+  font-size: 1rem; /* Définit la taille de la police du bouton à 1 rem */
+  border: none; /* Supprime la bordure par défaut */
+  border-radius: 6px; /* Arrondit les coins du bouton */
+  cursor: pointer; /* Change le curseur pour indiquer un élément cliquable */
+  transition: background-color 0.3s; /* Ajoute une transition pour le changement de couleur de fond */
+}
+
+.toggle-btn:hover {
+  background-color: #0097a7; /* Change la couleur de fond en une nuance plus sombre au survol */
+}
+/* Bouton stylé avec chevron */
+.toggle-btn {
+  background-color: #3a3a3a; /* Définit une couleur de fond sombre */
+  color: white; /* Définit la couleur du texte en blanc */
+  padding: 8px; /* Définit un espacement intérieur de 8 pixels */
+  font-size: 0.5rem; /* Définit une taille de police plus petite pour le bouton */
+  border: none; /* Supprime la bordure par défaut */
+  border-radius: 4px; /* Arrondit les coins du bouton */
+  cursor: pointer; /* Change le curseur pour indiquer un élément cliquable */
+  transition: background-color 0.3s, transform 0.2s; /* Ajoute des transitions pour le changement de couleur et le transform */
+  display: flex; /* Utilise Flexbox pour centrer le contenu de manière efficace */
+  align-items: center; /* Centre verticalement les éléments à l'intérieur du bouton */
+  justify-content: center; /* Centre horizontalement les éléments à l'intérieur du bouton */
+}
+
+.toggle-btn:hover {
+  background-color: #0097a7; /* Change la couleur de fond au survol */
+  transform: scale(1.05); /* Augmente légèrement la taille pour un effet visuel */
+}
+
+/* Optionnel : Améliorer l'affichage sur mobile */
+@media (max-width: 768px) {
+  .toggle-btn {
+    font-size: 1.2rem; /* Augmente la taille de la police pour les boutons sur les petits écrans */
+  }
+}
+
+/* Section dépliable */
+.toggle-content {
+  display: none; /* Cache le contenu par défaut */
+  margin-top: 10px; /* Ajoute une marge en haut de 10 pixels */
+}
+
+.toggle-content.active {
+  display: block; /* Affiche le contenu lorsque l'état est actif */
+  animation: fadeIn 0.3s ease-in-out; /* Applique une animation au contenu lorsqu'il devient visible */
+}
+
+/* Mise en page Bento pour les expériences pro */
+.bento-card-pro {
+  background: #1f2029; /* Définit une couleur de fond accueillante */
+  color: white; /* Définit la couleur du texte en blanc */
+  padding: 1.5rem; /* Ajoute un espacement intérieur de 1,5 rem */
+  border-radius: 0.75rem; /* Arrondit les bords de la carte */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce autour de la carte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide pour les effets de survol */
+  margin: 1.5rem; /* Définit une marge externe de 1,5 rem autour de la carte */
+  border-style: solid; /* Définit le style de la bordure à "solide" */
+  border-width: 1px; /* Définit la largeur de la bordure à 1 pixel */
+  border-color: #444; /* Définit la couleur de la bordure */
+}
+
+.bento-card-pro:hover {
+  transform: translateY(-6px); /* Déplace la carte légèrement vers le haut au survol */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Augmente l'ombre pour un effet visuel au survol */
+}
+
+.bento-card-pro h2 {
+  font-size: 1.5rem; /* Définit la taille de la police pour les titres à 1,5 rem */
+  margin-bottom: 1rem; /* Ajoute une marge en bas de 1 rem */
+  color: #ffcc00; /* Définit une couleur dorée pour les titres */
+}
+
+.bento-card-pro li {
+  font-size: 1rem; /* Définit la taille de la police pour les éléments de liste à 1 rem */
+  line-height: 1.6; /* Définit l'espacement entre les lignes pour une meilleure lisibilité */
+}
+
+.bento-card-pro p {
+  color: #bdc3c7; /* Définit une couleur gris clair pour le texte secondaire */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); } /* Commence avec une opacité de 0 et une translation vers le haut */
+  to { opacity: 1; transform: translateY(0); } /* Termine avec une opacité de 1 et sans translation */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem; /* Ajuste la taille de police du titre principal sur les petits écrans */
+  }
+
+  .bento-card h2 {
+    font-size: 1.3rem; /* Ajuste la taille de police des titres sur les cartes Bento sur les petits écrans */
+  }
+}
