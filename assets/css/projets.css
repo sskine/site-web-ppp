@@ -131,46 +131,67 @@
     background: #70a751; /* Change la couleur de fond au survol */
 }
 
-/* Partie Modal */
+/* Partie Modal - Améliorée */
 .modal {
     display: none; /* Masqué par défaut */
     position: fixed; /* Positionnement fixe pour qu'il reste à l'écran */
-    z-index: 999; /* Assure que la modale est au-dessus des autres éléments */
+    z-index: 1000; /* Assure que la modale est au-dessus des autres éléments (valeur augmentée pour plus de sécurité) */
     left: 0; /* Aligne la modale à gauche */
     top: 0; /* Aligne la modale en haut */
     width: 100%; /* Prend toute la largeur de la fenêtre */
     height: 100%; /* Prend toute la hauteur de la fenêtre */
     overflow: auto; /* Permet le défilement si le contenu dépasse */
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent plus sombre */
+    display: flex; /* Utilise Flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    padding: 20px; /* Ajoute un peu de padding pour éviter que le contenu touche les bords sur de très petits écrans */
 }
 
 .modal-content {
     background-color: #fff; /* Fond blanc pour le contenu de la modale */
-    margin: 15% auto; /* Centre la modale, avec un espacement en haut de 15% */
-    padding: 20px; /* Ajoute du rembourrage à l'intérieur de la modale */
-    border: 1px solid #888; /* Bordure grise pour délimiter la modale */
-    width: 80%; /* Largeur de la modale */
-    max-height: 80%; /* Hauteur maximale de la modale */
+    padding: 30px; /* Augmente le rembourrage à l'intérieur de la modale */
+    border: 1px solid #ddd; /* Bordure plus subtile */
+    width: 90%; /* Augmente la largeur de la modale */
+    max-width: 700px; /* Définit une largeur maximale pour la modale sur les grands écrans */
+    max-height: 90%; /* Hauteur maximale de la modale */
     overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
     border-radius: 10px; /* Arrondit les coins de la modale */
-    color: black; /* Définit la couleur du texte en noir */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce autour de la modale */
+    color: #333; /* Définit une couleur de texte plus foncée pour une meilleure lisibilité */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ajoute une ombre plus prononcée */
+    position: relative; /* Permet de positionner le bouton de fermeture par rapport à ce conteneur */
 }
 
 .close-btn {
     color: #aaa; /* Définit une couleur grise pour le bouton de fermeture */
-    float: right; /* Aligne le bouton de fermeture à droite */
-    font-size: 28px; /* Définit la taille de la police pour le bouton de fermeture */
+    font-size: 30px; /* Augmente la taille de la police */
     font-weight: bold; /* Met le texte en gras */
+    position: absolute; /* Positionne le bouton de fermeture en absolu */
+    top: 10px; /* Distance depuis le haut du conteneur parent (modal-content) */
+    right: 15px; /* Distance depuis la droite du conteneur parent */
+    cursor: pointer; /* Change le curseur en pointeur */
+    transition: color 0.3s ease; /* Transition fluide pour le changement de couleur */
 }
 
 .close-btn:hover,
 .close-btn:focus {
-    color: black; /* Change la couleur au survol ou en focus */
+    color: #555; /* Change la couleur au survol ou en focus à un gris plus foncé */
     text-decoration: none; /* Supprime le soulignement par défaut */
-    cursor: pointer; /* Change le curseur en pointeur */
+    outline: none; /* Supprime le contour par défaut au focus */
 }
 
+/* Styles pour le contenu à l'intérieur de la modale (exemples) */
+.modal-content h2 {
+    margin-top: 0; /* Supprime la marge supérieure par défaut du titre */
+    margin-bottom: 20px; /* Ajoute une marge en bas du titre */
+    font-size: 1.8rem; /* Taille de police pour le titre de la modale */
+    color: #58873d; /* Couleur du titre */
+}
+
+.modal-content p {
+    margin-bottom: 15px; /* Ajoute une marge en bas des paragraphes */
+    line-height: 1.6; /* Augmente l'espacement entre les lignes pour une meilleure lisibilité */
+}
 
 code {
   background-color: #f4f4f4; /* Définit un fond gris clair pour le bloc de code */
@@ -201,5 +222,20 @@ code {
 
     .product-image {
         height: 250px; /* Réduit la hauteur de l'image du produit pour les petits écrans */
+    }
+
+    .modal-content {
+        padding: 20px; /* Réduit le rembourrage pour les petits écrans */
+        width: 95%; /* Augmente la largeur pour occuper plus d'espace sur les petits écrans */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem; /* Réduit la taille du titre de la modale */
+    }
+
+    .close-btn {
+        font-size: 24px; /* Réduit la taille du bouton de fermeture */
+        top: 5px; /* Ajuste la position du bouton de fermeture */
+        right: 10px; /* Ajuste la position du bouton de fermeture */
     }
 }
